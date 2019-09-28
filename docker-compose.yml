@@ -1,0 +1,32 @@
+version: '3.2'
+services:
+  django:
+    image: iss-dev:django
+    build: 
+      context: ./django
+    ports: 
+    - 8000:8000
+    depends_on:
+    - postgres
+    container_name: django-dev
+    volumes:
+    - ./issessionsctf-master:/opt/app/issessionsctf
+#     - type: bind
+#       source: /opt/docker/issessions
+#       target: /opt/app/issessionsctf
+    networks:
+    - iss
+
+  postgres:
+    image: iss-dev:postgres
+    build:
+      context: ./postgres
+    ports: 
+    - 5432:5432
+    container_name: postgresql
+    networks:
+    - iss
+
+networks:
+  iss:
+
