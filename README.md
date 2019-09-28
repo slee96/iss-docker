@@ -30,16 +30,18 @@
 ## Dynamic development deployment
   #### STEP 1:
   In you're project directory, run: \
-  **$** wget https://github.com/issessions/issessionsctf/archive/master.zip; unzip master.zip; rm -f master.zip 
+  **$** `wget https://github.com/issessions/issessionsctf/archive/master.zip; unzip master.zip; rm -f master.zip`
 
   #### STEP 2:
   Edit the docker-compose.yml file with your prefered editor (nano, vim, vi) \
   **$** `vi docker-compose.yml`
 
   #### STEP 3:
-  Uncomment the following lines \
-    `#    volumes:`
-    `#    - ./issessionsctf-master:/opt/app/issessionsctf`
+  Uncomment the following lines 
+  ```
+  #    volumes:
+  #    - ./issessionsctf-master:/opt/app/issessionsctf
+  ```
 
   #### STEP 4:
   Add enviroment variables to django project settings, run the following 
