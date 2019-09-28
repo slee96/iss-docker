@@ -37,11 +37,8 @@
   **$** `vi docker-compose.yml`
 
   #### STEP 3:
-  Uncomment the following lines in docker-compose.yml
-  ```
-  #    volumes:
-  #    - ./issessionsctf:/opt/app/issessionsctf
-  ```
+  Uncomment lines in the docker-compose.yml file, run the following
+  **$** `sed -i 's/#//g' docker-compose.yml`
 
   #### STEP 4:
   Add required enviromental variables to django's project settings, run the following 
