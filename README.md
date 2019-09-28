@@ -6,7 +6,7 @@
   - docker-compose  
   - git ( $ apt install git) 
 
-## Initial deployment steps:
+## Initial static deployment steps:
   #### STEP 1: 
   Create a working directory for your project \
     **$** `mkdir ~/iss_sessions_dev`
@@ -27,7 +27,7 @@
   On a browser, and check if the application has deployed \
   `http://localhost:8000/` 
 
-## Dynamic development deployment
+## Dynamic development deployment steps:
   #### STEP 1:
   In you're project directory, run: \
   **$** `wget https://github.com/issessions/issessionsctf/archive/master.zip; unzip master.zip; rm -f master.zip`
