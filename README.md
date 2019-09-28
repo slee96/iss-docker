@@ -43,7 +43,7 @@
 
   ### STEP 4:
   Add enviroment variables to django project settings \
-  **$** `QUOTE=\'; sed -i '/INSTALLED_APPS/i \
+  **$** ```QUOTE=\'; sed -i '/INSTALLED_APPS/i \
     SECRET_KEY = '$QUOTE'2^f+3@v7$v1f8yt0!se3-1t$5tlp+xm17=*gno_xoi&&9m#2a&'$QUOTE' \
     DEBUG = True \
     ALLOWED_HOSTS = [] \
@@ -57,7 +57,7 @@
         '$QUOTE'HOST'$QUOTE': '$QUOTE'postgresql'$QUOTE', \
         '$QUOTE'PORT'$QUOTE': '$QUOTE'5432'$QUOTE', \
       } \
-    }' issessionsctf-master/issessionsctf/settings/__init__.py;`
+    }' issessionsctf-master/issessionsctf/settings/__init__.py;```
 
   ### STEP 4
   Redeploy the containers with with the mounted volume \
