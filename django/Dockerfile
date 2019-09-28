@@ -1,14 +1,14 @@
 FROM django:latest
 
-
-RUN pip install --upgrade pip; \
-	apt update; \
-	apt-get install -y make zip wget libpq-dev python-dev; \ 
+# Update system and install packages to assist with image build 
+RUN apt update; \
+	apt-get install -y make zip wget; \ 
 	wget https://github.com/issessions/issessionsctf/archive/master.zip; \
 	unzip master.zip -d /opt/app; \ 
 	mv /opt/app/issessionsctf-master /opt/app/issessionsctf; 
 
-RUN 	QUOTE=\'; sed -i '/INSTALLED_APPS/i \ 
+# Add required enviromental variables to django's project settings
+RUN QUOTE=\'; sed -i '/INSTALLED_APPS/i \ 
 		\\nSECRET_KEY = '$QUOTE'2^f+3@v7$v1f8yt0!se3-1t$5tlp+xm17=*gno_xoi&&9m#2a&'$QUOTE' \
 		\nDEBUG = True \
 		\nALLOWED_HOSTS = [] \
@@ -24,7 +24,7 @@ RUN 	QUOTE=\'; sed -i '/INSTALLED_APPS/i \
 		    \n} \
 		\n}' /opt/app/issessionsctf/issessionsctf/settings/__init__.py;
        
-#Install Python 3.6.1 and upgrade pip3
+# Upgrade pip3 and manually install newer version of python: Python 3.6.1
 RUN cd /opt; \
 	wget https://www.python.org/ftp/python/3.6.1/Python-3.6.1.tgz; \
 	tar xvf Python-3.6.1.tgz; \
@@ -37,14 +37,16 @@ RUN cd /opt; \
 	ln -s /usr/local/bin/python3.6 /usr/local/python3; \
 	pip3 install --upgrade pip;
 
+# Install issessionctf project requirements, and install psycopg2 django plugin for postgresql database
 RUN pip3 install -r /opt/app/issessionsctf/requirements.txt; \
 	pip3 install django psycopg2; \
 	apt update;
 
+# Set working directory of image
 WORKDIR /opt/app/issessionsctf
-#VOLUME ["/opt/app/issessionsctf"]
-#ADD . /opt/app/issessionsctf
 
+# Copy script to image
 COPY wait_for_it.sh /home/
 
+# Executes wait_for_it script, builds tables in postgres database, and deploys ctf webapp
 CMD ["/bin/bash", "-c", "bash /home/./wait_for_it.sh && python3 manage.py makemigrations ctf && python3 manage.py migrate && python3 manage.py runserver 0.0.0.0:8000"]
