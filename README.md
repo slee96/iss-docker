@@ -66,13 +66,13 @@
 
   #### FINAL:
   Modify main.css to test dynamic webapp deployment  \
-  **$** `sed -i 's/font-size: 1em;/font-size: 3em;/g' issessionsctf-master/ctf/static/ctf/css/main.css`
+  **$** `sed -i 's/font-size: 1em;/font-size: 3em;/g' issessionsctf/ctf/static/ctf/css/main.css`
 
   On a browser, check if the application has deployed with a larger font than before \
   `http://localhost:8000/`
 
   Revert the changes \
-  **$** `sed -i 's/font-size: 3em;/font-size: 1em;/g' issessionsctf-master/ctf/static/ctf/css/main.css`
+  **$** `sed -i 's/font-size: 3em;/font-size: 1em;/g' issessionsctf/ctf/static/ctf/css/main.css`
 
 ## Authors
 
