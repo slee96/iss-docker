@@ -38,8 +38,8 @@
 
   #### STEP 3:
   Uncomment the following lines \
-    `#    volumes:
-    #    - ./issessionsctf-master:/opt/app/issessionsctf`
+    `#    volumes:`
+    `#    - ./issessionsctf-master:/opt/app/issessionsctf`
 
   #### STEP 4:
   Add enviroment variables to django project settings, run the following 
