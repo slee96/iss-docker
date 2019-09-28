@@ -24,27 +24,27 @@
   **$** `docker-compose up -d`
 
   #### FINAL:
-  On a browser, and check if the application has deployed \
+  On a browser, check if the application has deployed \
   `http://localhost:8000/` 
 
 ## Dynamic development deployment steps:
   #### STEP 1:
-  In you're project directory, run: \
-  **$** `wget https://github.com/issessions/issessionsctf/archive/master.zip; unzip master.zip; rm -f master.zip`
+  In you're project directory, pull issessionctf repository: \
+  **$** `git clone https://github.com/issessions/issessionsctf.git`
 
   #### STEP 2:
   Edit the docker-compose.yml file with your prefered editor (nano, vim, vi) \
   **$** `vi docker-compose.yml`
 
   #### STEP 3:
-  Uncomment the following lines 
+  Uncomment the following lines in docker-compose.yml
   ```
   #    volumes:
-  #    - ./issessionsctf-master:/opt/app/issessionsctf
+  #    - ./issessionsctf:/opt/app/issessionsctf
   ```
 
   #### STEP 4:
-  Add enviroment variables to django project settings, run the following 
+  Add required enviromental variables to django's project settings, run the following 
   ```bash
   QUOTE=\'; sed -i '/INSTALLED_APPS/i \
   SECRET_KEY = '$QUOTE'2^f+3@v7$v1f8yt0!se3-1t$5tlp+xm17=*gno_xoi&&9m#2a&'$QUOTE' \
@@ -64,17 +64,17 @@
   ```
   
   #### STEP 4
-  Redeploy the containers with with the mounted volume \
+  Redeploy the containers with the mounted volume \
   **$** `docker-compose up -d --force-recreate`
 
   #### FINAL:
-  Modify the css test dynamic deployment  \
+  Modify main.css to test dynamic webapp deployment  \
   **$** `sed -i 's/font-size: 1em;/font-size: 3em;/g' issessionsctf-master/ctf/static/ctf/css/main.css`
 
-  On a browser, and check if the application has deployed with a larger font \
+  On a browser, check if the application has deployed with a larger font than before \
   `http://localhost:8000/`
 
-  Revert chnages \
+  Revert the changes \
   **$** `sed -i 's/font-size: 3em;/font-size: 1em;/g' issessionsctf-master/ctf/static/ctf/css/main.css`
 
 ## Authors
