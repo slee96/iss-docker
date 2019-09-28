@@ -10,7 +10,7 @@ services:
     - postgres
     container_name: django-dev
 #    volumes:
-#    - ./issessionsctf-master:/opt/app/issessionsctf
+#    - ./issessionsctf:/opt/app/issessionsctf
     networks:
     - iss
 
