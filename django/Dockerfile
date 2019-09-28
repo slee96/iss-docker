@@ -48,5 +48,5 @@ WORKDIR /opt/app/issessionsctf
 # Copy script to image
 COPY wait_for_it.sh /home/
 
-# Executes wait_for_it script, builds tables in postgres database, and deploys ctf webapp
+# Executes wait_for_it script, creates tables in postgres database, and deploys ctf webapp
 CMD ["/bin/bash", "-c", "bash /home/./wait_for_it.sh && python3 manage.py makemigrations ctf && python3 manage.py migrate && python3 manage.py runserver 0.0.0.0:8000"]
