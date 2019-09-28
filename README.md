@@ -1,7 +1,7 @@
 # ISS Session CTF / dev-docker deployment
 
 ## Enviroment requirements:
-  - Liunx OS/Linux VM
+  - Linux OS/Linux VM
   - docker-ce (installation varries per distribution)
   - docker-compose  
   - git ( $ apt install git) 
@@ -27,7 +27,7 @@
     Check if the application has deployed
     http://localhost:8000/
 
-## Deployment steps for development
+## Dynamic development deployment
   ### STEP 1:
     In you're project directory, run: 
     $ wget https://github.com/issessions/issessionsctf/archive/master.zip; unzip master.zip; rm -f master.zip
@@ -44,3 +44,13 @@
   ### STEP 4
     Redeploy the containers with with the mounted volume
     $ docker-compose up -d --force-recreate
+
+  ### Final:
+    Modify the css test dynamic deployment  
+    $ sed -i 's/font-size: 1em;/font-size: 3em;/g' issessionsctf-master/ctf/static/ctf/css/main.css 
+
+    Check if the application has deployed with large font
+    http://localhost:8000/
+
+    Revert chnages
+    $ sed -i 's/font-size: 3em;/font-size: 1em;/g' issessionsctf-master/ctf/static/ctf/css/main.css
