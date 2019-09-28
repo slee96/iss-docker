@@ -37,7 +37,7 @@
   **$** `vi docker-compose.yml`
 
   #### STEP 3:
-  Uncomment lines in the docker-compose.yml file, run the following
+  Uncomment lines in the docker-compose.yml file, run the following \
   **$** `sed -i 's/#//g' docker-compose.yml`
 
   #### STEP 4:
@@ -57,7 +57,7 @@
       '$QUOTE'HOST'$QUOTE': '$QUOTE'postgresql'$QUOTE', \
       '$QUOTE'PORT'$QUOTE': '$QUOTE'5432'$QUOTE', \
     } \
-  }' issessionsctf-master/issessionsctf/settings/__init__.py;
+  }' issessionsctf/issessionsctf/settings/__init__.py;
   ```
   
   #### STEP 4
