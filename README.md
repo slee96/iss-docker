@@ -8,8 +8,8 @@
 
 ## Initial deployment steps:
   ### STEP 1: 
-    create a working directory for your project
-    **$** mkdir ~/iss_sessions_dev
+  create a working directory for your project
+    **$** `mkdir ~/iss_sessions_dev`
 
   ### STEP 2:
     pull this repo
