@@ -41,6 +41,24 @@
     #    volumes:
     #    - ./issessionsctf-master:/opt/app/issessionsctf
 
+  ### STEP 4:
+    Add enviroment variables to django project settings
+    $ QUOTE=\'; sed -i '/INSTALLED_APPS/i \
+SECRET_KEY = '$QUOTE'2^f+3@v7$v1f8yt0!se3-1t$5tlp+xm17=*gno_xoi&&9m#2a&'$QUOTE' \
+DEBUG = True \
+ALLOWED_HOSTS = [] \
+\
+DATABASES = { \
+  '$QUOTE'default'$QUOTE': { \
+    '$QUOTE'ENGINE'$QUOTE': '$QUOTE'django.db.backends.postgresql_psycopg2'$QUOTE', \
+    '$QUOTE'NAME'$QUOTE': '$QUOTE'iss'$QUOTE', \
+    '$QUOTE'USER'$QUOTE': '$QUOTE'issessions'$QUOTE', \
+    '$QUOTE'PASSWORD'$QUOTE': '$QUOTE'issessions'$QUOTE', \
+    '$QUOTE'HOST'$QUOTE': '$QUOTE'postgresql'$QUOTE', \
+    '$QUOTE'PORT'$QUOTE': '$QUOTE'5432'$QUOTE', \
+  } \
+}' issessionsctf-master/issessionsctf/settings/__init__.py;
+
   ### STEP 4
     Redeploy the containers with with the mounted volume
     $ docker-compose up -d --force-recreate
