@@ -23,7 +23,7 @@
   Deploy the project \
   **$** `docker-compose up -d`
 
-  #### Final:
+  #### FINAL:
   On a browser, and check if the application has deployed \
   `http://localhost:8000/` 
 
@@ -67,7 +67,7 @@
   Redeploy the containers with with the mounted volume \
   **$** `docker-compose up -d --force-recreate`
 
-  #### Final:
+  #### FINAL:
   Modify the css test dynamic deployment  \
   **$** `sed -i 's/font-size: 1em;/font-size: 3em;/g' issessionsctf-master/ctf/static/ctf/css/main.css`
 
@@ -76,3 +76,10 @@
 
   Revert chnages \
   **$** `sed -i 's/font-size: 3em;/font-size: 1em;/g' issessionsctf-master/ctf/static/ctf/css/main.css`
+
+## Authors
+
+* **Spencer Lee** - *Initial work* - [slee96](https://github.com/slee96)
+
+## Acknowledgments
+* Hat tip to Keifer, quaility control and testing 
