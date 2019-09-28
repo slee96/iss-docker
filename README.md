@@ -21,10 +21,26 @@
 
   ### STEP 4:
     run project 
-    $ docker-compose up -d --build 
+    $ docker-compose up -d
 
   ### Final:
     Check if the application has deployed
     http://localhost:8000/
 
+## Deployment steps for development
+  ### STEP 1:
+    In you're project directory, run: 
+    $ wget https://github.com/issessions/issessionsctf/archive/master.zip; unzip master.zip; rm -f master.zip
 
+  ### STEP 2:
+    Edit the docker-compose.yml file with your prefered editor (nano, vim, vi, pico)
+    $ vi docker-compose.yml
+
+  ### STEP 3:
+    Uncomment the following lines
+    #    volumes:
+    #    - ./issessionsctf-master:/opt/app/issessionsctf
+
+  ### STEP 4
+    Redeploy the containers with with the mounted volume
+    $ docker-compose up -d --force-recreate
