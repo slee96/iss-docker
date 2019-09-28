@@ -9,11 +9,8 @@ services:
     depends_on:
     - postgres
     container_name: django-dev
-    volumes:
-    - ./issessionsctf-master:/opt/app/issessionsctf
-#     - type: bind
-#       source: /opt/docker/issessions
-#       target: /opt/app/issessionsctf
+#    volumes:
+#    - ./issessionsctf-master:/opt/app/issessionsctf
     networks:
     - iss
 
