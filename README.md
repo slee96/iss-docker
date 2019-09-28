@@ -9,19 +9,19 @@
 ## Initial deployment steps:
   ### STEP 1: 
     create a working directory for your project
-    $ mkdir ~/iss_sessions_dev
+    *$* mkdir ~/iss_sessions_dev
 
   ### STEP 2:
     pull this repo
-    $ git clone https://github.com/slee96/iss-docker.git
+    *$* git clone https://github.com/slee96/iss-docker.git
 
   ### STEP 3:
     change working directory
-    $ cd iss-docker/
+    *$* cd iss-docker/
 
   ### STEP 4:
     run project 
-    $ docker-compose up -d
+    *$* docker-compose up -d
 
   ### Final:
     Check if the application has deployed
@@ -30,11 +30,11 @@
 ## Dynamic development deployment
   ### STEP 1:
     In you're project directory, run: 
-    $ wget https://github.com/issessions/issessionsctf/archive/master.zip; unzip master.zip; rm -f master.zip
+    *$* wget https://github.com/issessions/issessionsctf/archive/master.zip; unzip master.zip; rm -f master.zip
 
   ### STEP 2:
     Edit the docker-compose.yml file with your prefered editor (nano, vim, vi, pico)
-    $ vi docker-compose.yml
+    *$* vi docker-compose.yml
 
   ### STEP 3:
     Uncomment the following lines
@@ -43,7 +43,7 @@
 
   ### STEP 4:
     Add enviroment variables to django project settings
-    $ QUOTE=\'; sed -i '/INSTALLED_APPS/i \
+    *$* QUOTE=\'; sed -i '/INSTALLED_APPS/i \
     SECRET_KEY = '$QUOTE'2^f+3@v7$v1f8yt0!se3-1t$5tlp+xm17=*gno_xoi&&9m#2a&'$QUOTE' \
     DEBUG = True \
     ALLOWED_HOSTS = [] \
@@ -61,14 +61,14 @@
 
   ### STEP 4
     Redeploy the containers with with the mounted volume
-    $ docker-compose up -d --force-recreate
+    *$* docker-compose up -d --force-recreate
 
   ### Final:
     Modify the css test dynamic deployment  
-    $ sed -i 's/font-size: 1em;/font-size: 3em;/g' issessionsctf-master/ctf/static/ctf/css/main.css 
+    *$* sed -i 's/font-size: 1em;/font-size: 3em;/g' issessionsctf-master/ctf/static/ctf/css/main.css 
 
     Check if the application has deployed with large font
     http://localhost:8000/
 
     Revert chnages
-    $ sed -i 's/font-size: 3em;/font-size: 1em;/g' issessionsctf-master/ctf/static/ctf/css/main.css
+    *$* sed -i 's/font-size: 3em;/font-size: 1em;/g' issessionsctf-master/ctf/static/ctf/css/main.css
