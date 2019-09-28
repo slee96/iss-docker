@@ -24,7 +24,7 @@
   **$** `docker-compose up -d`
 
   #### Final:
-  Check if the application has deployed \
+  On a browser, and check if the application has deployed \
   `http://localhost:8000/` 
 
 ## Dynamic development deployment
@@ -42,7 +42,7 @@
     #    - ./issessionsctf-master:/opt/app/issessionsctf`
 
   #### STEP 4:
-  Add enviroment variables to django project settings, run the following \ 
+  Add enviroment variables to django project settings, run the following 
   ```bash
   QUOTE=\'; sed -i '/INSTALLED_APPS/i \
   SECRET_KEY = '$QUOTE'2^f+3@v7$v1f8yt0!se3-1t$5tlp+xm17=*gno_xoi&&9m#2a&'$QUOTE' \
@@ -69,7 +69,7 @@
   Modify the css test dynamic deployment  \
   **$** `sed -i 's/font-size: 1em;/font-size: 3em;/g' issessionsctf-master/ctf/static/ctf/css/main.css`
 
-  Check if the application has deployed with large font \
+  On a browser, and check if the application has deployed with a larger font \
   `http://localhost:8000/`
 
   Revert chnages \
