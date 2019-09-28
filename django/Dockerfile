@@ -46,7 +46,10 @@ RUN pip3 install -r /opt/app/issessionsctf/requirements.txt; \
 WORKDIR /opt/app/issessionsctf
 
 # Copy script to image
-COPY wait_for_it.sh /home/
+COPY wait_for_it.sh django.sh /home/
+
+# Give execute permissions for scripts
+RUN chmod +x /home/*.sh
 
 # Executes wait_for_it script, creates tables in postgres database, and deploys ctf webapp
-CMD ["/bin/bash", "-c", "bash /home/./wait_for_it.sh && python3 manage.py makemigrations ctf && python3 manage.py migrate && python3 manage.py runserver 0.0.0.0:8000"]
+CMD ["/bin/bash", "-c", "bash /home/./django.sh"]
