@@ -1,7 +1,7 @@
 FROM django:latest
 
 # Update system and install packages to assist with image build 
-RUN apt update; \
+RUN apt-get update; \
 	apt-get install -y make zip wget; \ 
 	wget https://github.com/issessions/issessionsctf/archive/master.zip; \
 	unzip master.zip -d /opt/app; \ 
@@ -40,7 +40,7 @@ RUN cd /opt; \
 # Install issessionctf project requirements, and install psycopg2 django plugin for postgresql database
 RUN pip3 install -r /opt/app/issessionsctf/requirements.txt; \
 	pip3 install django psycopg2; \
-	apt update;
+	apt-get update;
 
 # Set working directory of image
 WORKDIR /opt/app/issessionsctf
