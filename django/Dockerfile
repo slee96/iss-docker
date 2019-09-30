@@ -46,7 +46,7 @@ RUN pip3 install -r /opt/app/issessionsctf/requirements.txt; \
 WORKDIR /opt/app/issessionsctf
 
 # Copy script to image
-COPY wait_for_it.sh django.sh /home/
+COPY django.sh /home/
 
 # Give execute permissions for scripts
 RUN chmod +x /home/*.sh
