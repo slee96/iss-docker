@@ -62,7 +62,7 @@
   
   #### STEP 4
   Redeploy the containers with the mounted volume \
-  **$** `docker-compose up -d --force-recreate`
+  **$** `docker-compose up -d --force-recreate --build`
 
   #### FINAL:
   Modify main.css to test dynamic webapp deployment  \
