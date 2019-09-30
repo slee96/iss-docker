@@ -60,7 +60,7 @@
   }' issessionsctf/issessionsctf/settings/__init__.py;
   ```
   
-  #### STEP 4
+  #### STEP 5:
   Redeploy the containers with the mounted volume and locally configured settings \
   **$** `docker-compose up -d --force-recreate --build`
 
