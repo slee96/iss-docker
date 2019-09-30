@@ -21,7 +21,7 @@
 
   #### STEP 4:
   Deploy the project \
-  **$** `docker-compose up -d`
+  **$** `docker-compose up -d --build`
 
   #### FINAL:
   On a browser, check if the application has deployed \
