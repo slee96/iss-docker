@@ -41,7 +41,7 @@
   **$** `sed -i 's/#//g' docker-compose.yml`
 
   #### STEP 4:
-  Add required enviromental variables to django's project settings, run the following 
+  To add the required environmental variables to django's project settings, run the following 
   ```bash
   QUOTE=\'; sed -i '/INSTALLED_APPS/i \
   SECRET_KEY = '$QUOTE'2^f+3@v7$v1f8yt0!se3-1t$5tlp+xm17=*gno_xoi&&9m#2a&'$QUOTE' \
@@ -61,7 +61,7 @@
   ```
   
   #### STEP 4
-  Redeploy the containers with the mounted volume \
+  Redeploy the containers with the mounted volume and locally configured settings \
   **$** `docker-compose up -d --force-recreate --build`
 
   #### FINAL:
